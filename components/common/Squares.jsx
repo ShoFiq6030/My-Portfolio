@@ -148,7 +148,7 @@ const Squares = ({
   }, [direction, speed, borderColor, hoverFillColor, squareSize]);
 
   return (
-    <div className="relative w-full h-[100vh] overflow-hidden">
+    <div className="relative w-full h-full overflow-hidden">
       <canvas
         ref={canvasRef}
         className="absolute top-0 left-0 w-full h-full pointer-events-auto z-0"

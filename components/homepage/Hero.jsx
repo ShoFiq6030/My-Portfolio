@@ -6,20 +6,21 @@ export default function Hero() {
   return (
     <div className="w-full h-[82vh] bg-opacity-90 bg-gray-500">
       <div className=" w-full h-full flex items-center justify-evenly ">
-        <div className="border-b-2 border-r-2 border-yellow-400 rounded-e-full overflow-hidden w-6/12  ">
+        <div className="border-b-2 border-r-2 border-yellow-400 rounded-e-full overflow-hidden w-6/12 h-auto lg:h-full ">
           <Image
             src="/shofiq-img.png"
             alt="Hero Image"
             width={1920}
             height={1080}
-            className="w-full h-full  "
+            className="w-full h-full object-cover"
+            quality={100}
             priority
             loading="eager"
           />
         </div>
 
         <div className="text-center ">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          <h1 className="text-2xl md:text-4xl font-bold mb-4">
             Hello, Im Shofiq
           </h1>
 
@@ -33,7 +34,7 @@ export default function Hero() {
                   "System Admin",
                   "MikroTik Expert ",
                   "Linux Enthusiast",
-                  "Gamer 🫢"
+                  "Gamer 🫢",
                 ]}
                 mainClassName="px-2 sm:px-2 md:px-3  text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
                 staggerFrom={"last"}
