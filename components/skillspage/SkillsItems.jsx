@@ -27,9 +27,7 @@ export default function SkillsItems() {
           </div>
         ))}
       </div>
-      <h1 className="text-center  text-2xl font-bold">
-        for System Administration
-      </h1>
+      <h1 className="text-center  text-2xl font-bold">System Administration</h1>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
         {systemAdminSkills.map((skill, index) => (
           <div

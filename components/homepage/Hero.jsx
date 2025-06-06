@@ -4,7 +4,7 @@ import RotatingText from "../common/RotatingText";
 
 export default function Hero() {
   return (
-    <div className="w-full h-[82vh] bg-opacity-90 bg-gray-500">
+    <div className="w-full h-[82vh] bg-gray-900 bg-opacity-50">
       <div className=" w-full h-full flex items-center justify-evenly ">
         <div className="border-b-2 border-r-2 border-yellow-400 rounded-e-full overflow-hidden w-6/12 h-auto lg:h-full ">
           <Image
@@ -25,7 +25,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl mb-8">
-            A passionate{" "}
+            A passionate
             <span>
               <RotatingText
                 texts={[
@@ -36,7 +36,7 @@ export default function Hero() {
                   "Linux Enthusiast",
                   "Gamer 🫢",
                 ]}
-                mainClassName="px-2 sm:px-2 md:px-3  text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                mainClassName="px-2 sm:px-2 md:px-3  text-yellow-400 overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
                 staggerFrom={"last"}
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}

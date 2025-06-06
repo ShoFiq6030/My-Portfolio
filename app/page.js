@@ -10,14 +10,14 @@ export default function Home() {
     <div >
 
 
-    <div className="container m-auto text-white">
-          <NavBar />
-          <Hero />
-          <Footer/>
-        </div>
+      <div className="container m-auto text-white ">
+        <NavBar />
+        <Hero />
+        <Footer />
+      </div>
 
 
-    
+
 
     </div>
   );

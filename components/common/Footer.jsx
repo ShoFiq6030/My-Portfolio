@@ -11,31 +11,28 @@ export default function Footer() {
         {/* <p className="text-sm">Built with Next.js and Tailwind CSS</p> */}
       </div>
       <div className=" w-1/2  ">
-      <span className="mr-4 mb-4">Follow me: </span>
+        <span className="mr-4 mb-4">Follow me: </span>
         <p className="flex  ">
-          
           <a
             href="https://www.linkedin.com/in/shofiq-it/"
             target="_blank"
-            className="text-yellow-400 cursor-pointer  "
+            className="hover:text-yellow-400 cursor-pointer  "
           >
             <FaLinkedin className="text-2xl ml-1" />
           </a>
           <a
             href="https://github.com/ShoFiq6030"
             target="_blank"
-            className="text-yellow-400  cursor-pointer"
+            className="hover:text-yellow-400  cursor-pointer"
           >
-            <FaGithub 
-            className="text-2xl ml-1"  />
+            <FaGithub className="text-2xl ml-1" />
           </a>
           <a
             href="https://www.facebook.com/shofiq6030"
             target="_blank"
-            className="text-yellow-400  cursor-pointer"
+            className="hover:text-yellow-400  cursor-pointer"
           >
-            <FaFacebookF 
-            className="text-2xl ml-1" />
+            <FaFacebookF className="text-2xl ml-1" />
           </a>
         </p>
       </div>
