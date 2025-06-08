@@ -8,7 +8,7 @@ export default function SkillsPage() {
   return (
     <div className="container m-auto text-white">
       <NavBar />
-      <div className="w-full h-auto  bg-gray-500 bg-opacity-90  items-center justify-center">
+      <div className="w-full h-auto  bg-gray-900 bg-opacity-50  items-center justify-center">
         <SkillsDetails />
         <SkillsItems />
       </div>

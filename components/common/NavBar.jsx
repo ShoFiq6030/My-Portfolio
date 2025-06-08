@@ -15,7 +15,7 @@ export default function NavBar() {
     { href: "/", label: "HOME" },
     { href: "/about-me", label: "ABOUT ME" },
     { href: "/skills", label: "SKILLS" },
-    { href: "/education", label: "EDUCATION" },
+
     { href: "/projects", label: "PROJECTS" },
     { href: "/contact", label: "CONTACT ME" },
     { href: "/more", label: "MORE" },
@@ -24,7 +24,12 @@ export default function NavBar() {
   return (
     <div className="container relative flex items-center h-[8vh] justify-between p-4 bg-gray-800">
       <div>
-        <Image src="/logo2.png" alt="Logo" width={100} height={100} />
+        <Link
+          href="/"
+          className="flex items-center justify-center w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden"
+        >
+          <Image src="/logo2.png" alt="Logo" width={100} height={100} />
+        </Link>
       </div>
 
       <ul
@@ -38,7 +43,9 @@ export default function NavBar() {
           <li key={link.href}>
             <Link
               href={link.href}
-              className={`navLink transition-transform duration-300  ${pathname === link.href ? "text-yellow-400 font-bold" : ""}`}
+              className={`navLink transition-transform duration-300  ${
+                pathname === link.href ? "text-yellow-400 font-bold" : ""
+              }`}
             >
               {link.label}
             </Link>

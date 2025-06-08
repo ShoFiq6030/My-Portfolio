@@ -7,7 +7,7 @@ export default function projectPage() {
   return (
     <div className="container m-auto text-white bg-gray-900 bg-opacity-50">
       <NavBar />
-      <div className="w-full h-auto  p-4 ">
+      <div className="w-full min-h-[82vh] p-4 ">
         <h1 className="text-3xl"> my projects.</h1>
         <ProjectItems />
       </div>

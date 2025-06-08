@@ -7,7 +7,7 @@ export default function AboutPage() {
     <div className="container m-auto text-white">
       <NavBar />
 
-      <div className="w-full h-[82vh] bg-gray-500 bg-opacity-90 flex items-center justify-center">
+      <div className="w-full h-[82vh] bg-gray-900 bg-opacity-50 flex items-center justify-center">
         <div className="container m-auto text-white">
           <h1 className="text-4xl font-bold mb-4 text-yellow-400 ">About Me</h1>
           <p className="text-lg mb-4">
