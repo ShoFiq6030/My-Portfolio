@@ -1,6 +1,9 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Squares from './../components/common/Squares';
+import { ToastContainer, toast } from 'react-toastify';
+
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,6 +27,23 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900 bg-opacity-50`}
       >
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+          toastStyle={{
+            backgroundColor: "#222",
+            color: "#fff",
+            fontFamily: "var(--font-geist-sans)",
+          }}
+        />
         <Squares
 
           speed={0.1}
