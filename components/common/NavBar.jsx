@@ -26,9 +26,15 @@ export default function NavBar() {
       <div>
         <Link
           href="/"
-          className="flex items-center justify-center w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden"
+          className="flex items-center  justify-center  w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden"
         >
-          <Image src="/logo2.png" alt="Logo" width={100} height={100} />
+          <Image
+            src="/logo2.png"
+            alt="Logo"
+            className="hover:scale-110 transition-transform duration-300"
+            width={100}
+            height={100}
+          />
         </Link>
       </div>
 
