@@ -8,7 +8,8 @@ export default function contactPage() {
     <div className="container m-auto text-white ">
       <NavBar />
       <div className="flex flex-col items-center justify-center h-[82vh] p-4 bg-gray-900 bg-opacity-50">
-        <h1 className="text-3xl mb-8 ">Contact Me</h1>
+        <h1 className="text-4xl font-bold mb-4 ">Contact Me</h1>
+
         <ContactForm />
       </div>
 

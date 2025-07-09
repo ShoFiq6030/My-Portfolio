@@ -1,3 +1,4 @@
+import Experience from "@/components/aboutpage/Experience";
 import Footer from "@/components/common/Footer";
 import NavBar from "@/components/common/NavBar";
 import React from "react";
@@ -7,9 +8,11 @@ export default function AboutPage() {
     <div className="container m-auto text-white">
       <NavBar />
 
-      <div className="w-full h-[82vh] bg-gray-900 bg-opacity-50 flex items-center justify-center">
-        <div className="container m-auto text-white">
-          <h1 className="text-4xl font-bold mb-4 text-yellow-400 ">About Me</h1>
+      <div className="w-full min-h-[82vh] bg-gray-900 bg-opacity-50   items-center justify-center">
+        <div className="container m:w-1/2 m-auto text-white">
+          <h1 className="text-4xl font-bold mb-4 text-center text-yellow-400 ">
+            About Me
+          </h1>
           <p className="text-lg mb-4">
             Hello! Im Shofiq, a passionate web developer with a keen interest in
             creating dynamic and responsive web applications. I have experience
@@ -24,6 +27,9 @@ export default function AboutPage() {
             When Im not coding, you can find me gaming or exploring the latest
             tech trends.
           </p>
+        </div>
+        <div className="m:w-1/2 m-auto">
+          <Experience />
         </div>
       </div>
       <Footer />

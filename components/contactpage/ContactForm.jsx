@@ -13,12 +13,15 @@ export default function ContactForm() {
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   async function onSubmit() {
+    setLoading(true);
     // Validate form data
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("All fields are required.");
+      setLoading(false);
       return;
     }
     try {
@@ -32,11 +35,14 @@ export default function ContactForm() {
       } else {
         toast.error("Failed to send message. Please try again later.");
       }
+      setLoading(false);
     } catch (error) {
       console.error("Error sending message:", error);
       toast.error("Failed to send message. Please try again later.");
+      setLoading(false);
       return;
     }
+    setLoading(false);
   }
 
   return (
@@ -76,7 +82,7 @@ export default function ContactForm() {
         />
       </label>
       <div className="flex justify-end mt-4">
-        <SubmitButton handleSubmit={onSubmit} />
+        <SubmitButton handleSubmit={onSubmit} loading={loading} />
       </div>
     </form>
   );

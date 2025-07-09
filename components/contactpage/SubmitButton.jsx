@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-export default function SubmitButton({ handleSubmit }) {
+export default function SubmitButton({ handleSubmit, loading }) {
   return (
     <button
       onClick={(e) => {
@@ -9,9 +9,14 @@ export default function SubmitButton({ handleSubmit }) {
         handleSubmit();
       }}
       type="submit"
-      className="bg-yellow-300 text-black rounded p-2 hover:bg-yellow-600 transition-colors duration-300"
+      disabled={loading}
+      className={`${
+        loading
+          ? "bg-gray-300 cursor-not-allowed"
+          : "bg-yellow-300 hover:bg-yellow-600"
+      } text-black rounded p-2 transition-colors duration-300`}
     >
-      Submit
+      {loading ? "Submitting..." : "Submit"}
     </button>
   );
 }

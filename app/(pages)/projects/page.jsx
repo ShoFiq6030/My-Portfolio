@@ -8,7 +8,8 @@ export default function projectPage() {
     <div className="container m-auto text-white bg-gray-900 bg-opacity-50">
       <NavBar />
       <div className="w-full min-h-[82vh] p-4 ">
-        <h1 className="text-3xl"> my projects.</h1>
+        <h1 className="text-4xl font-bold mb-4 text-yellow-400">my projects</h1>
+
         <ProjectItems />
       </div>
       <Footer />
