@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import RotatingText from "../common/RotatingText";
 import Link from "next/link";
+import { FiDownload } from "react-icons/fi";
 
 export default function Hero() {
   return (
@@ -23,7 +24,6 @@ export default function Hero() {
         <div className=" ">
           <p className="text-xl md:text-3xl font-bold text-left"> Hello,</p>
           <h1 className="text-2xl md:text-4xl font-bold mb-4">I am Shofiq</h1>
-
           <p className="text-lg  md:text-xl mb-8">
             A passionate
             <span className="">
@@ -48,12 +48,22 @@ export default function Hero() {
               />
             </span>
           </p>
-          <Link
-            href="/contact"
-            className="bg-yellow-400 text-gray-800 px-6 py-3 rounded-full hover:bg-yellow-500 transition-colors"
-          >
-            Contact Me
-          </Link>
+          <div className="flex flex-col md:flex-row gap-4 items-center">
+            <Link
+              href="/contact"
+              className="bg-yellow-400 text-gray-800 px-6 py-3 rounded-full hover:bg-yellow-500 transition-colors"
+            >
+              Contact Me
+            </Link>
+            <a
+              href="/Md_Shofikul_Islam_CV.pdf"
+              download="Md_Shofikul_Islam_CV.pdf"
+              className="flex gap-1 items-center bg-yellow-400 text-gray-800 px-6 py-3 rounded-full hover:bg-yellow-500 transition-colors"
+            >
+              <span>Download CV</span>
+              <FiDownload size={20} />
+            </a>
+          </div>
         </div>
       </div>
     </div>
