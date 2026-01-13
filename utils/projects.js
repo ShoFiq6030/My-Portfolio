@@ -1,18 +1,18 @@
 export const projects = [
-    //   {
-    //     id: 1,
-    //     title: "Portfolio Website",
-    //     description: "A personal portfolio website to showcase my skills and projects.",
-    //     image: "/images/portfolio.png",
-    //     link: "https://sho-fiq-portfolio.vercel.app/",
-    //   },
-    //   {
-    //     id: 2,
-    //     title: "E-commerce Website",
-    //     description: "An e-commerce platform built with Next.js and Tailwind CSS.",
-    //     image: "/images/ecommerce.png",
-    //     link: "https://ecommerce-nextjs-tailwind.vercel.app/",
-    //   },
+    {
+        id: 1,
+        title: "Property selling Website",
+        description: "A Property selling website to sell and rent properties.",
+        image: "/homenest.png",
+        link: "https://home-nest-frontend.vercel.app/",
+    },
+    {
+        id: 2,
+        title: "Contest Participation Website",
+        description: "A Contest Participation platform built with React and Tailwind CSS.",
+        image: "/creatiVearse.png",
+        link: "https://creati-verse-frontend.vercel.app/",
+    },
     {
         id: 3,
         title: "Blog Platform",
