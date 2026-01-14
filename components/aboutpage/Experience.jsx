@@ -1,8 +1,92 @@
-import { getExperienceAPI } from "@/utils/api";
-import React from "react";
+"use client";
 
-export default async function Experience() {
-  const data = await getExperienceAPI();
+import React, { useState, useEffect, useRef } from "react";
+import { getExperienceAPI } from "@/utils/api";
+
+// Global cache to prevent repeated API calls across all instances
+let globalCache = {
+  data: null,
+  timestamp: null,
+  duration: 10 * 60 * 1000, // 10 minutes
+  isFetching: false,
+};
+
+export default function Experience() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const hasFetched = useRef(false);
+  const renderCount = useRef(0);
+
+  useEffect(() => {
+    renderCount.current++;
+    console.log(
+      `Experience component rendered: ${renderCount.current}, hasFetched: ${hasFetched.current}, isFetching: ${globalCache.isFetching}`
+    );
+
+    // Prevent multiple fetches in the same session
+    if (hasFetched.current || globalCache.isFetching) {
+      console.log("Skipping fetch - already fetched or fetching");
+      return;
+    }
+
+    const fetchExperience = async () => {
+      try {
+        globalCache.isFetching = true;
+        setLoading(true);
+
+        // Check cache first
+        const now = Date.now();
+        if (
+          globalCache.data &&
+          globalCache.timestamp &&
+          now - globalCache.timestamp < globalCache.duration
+        ) {
+          console.log("Using cached data");
+          setData(globalCache.data);
+          setLoading(false);
+          hasFetched.current = true;
+          globalCache.isFetching = false;
+          return;
+        }
+
+        console.log("Fetching new data from API");
+        const result = await getExperienceAPI();
+
+        // Update global cache
+        globalCache.data = result;
+        globalCache.timestamp = Date.now();
+
+        setData(result);
+        setError(null);
+        hasFetched.current = true;
+      } catch (err) {
+        console.error("Error fetching experience:", err);
+        setError("Failed to load experience data");
+      } finally {
+        setLoading(false);
+        globalCache.isFetching = false;
+      }
+    };
+
+    fetchExperience();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-48 sm:h-56 md:h-64">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-center py-6 sm:py-8 text-red-500 dark:text-red-400 text-sm sm:text-base">
+        {error}
+      </div>
+    );
+  }
 
   return (
     <div className="w-full">

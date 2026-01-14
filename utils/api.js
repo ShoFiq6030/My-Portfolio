@@ -46,17 +46,15 @@ const signupAPI = async (data) => {
 
 const getExperienceAPI = async () => {
     try {
-
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || '';
         const response = await fetch(`${baseUrl}/experience`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
             },
-            cache: 'no-store'
-        }
-
-        );
+            cache: 'force-cache',
+            next: { revalidate: 3600 } // Revalidate every hour
+        });
 
         if (!response.ok) {
             throw new Error("Failed to fetch experiences");

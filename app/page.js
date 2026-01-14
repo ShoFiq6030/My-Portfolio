@@ -23,8 +23,8 @@ export default function Home() {
     // Intersection Observer for section tracking
     const observerOptions = {
       root: null,
-      rootMargin: '-20% 0px -60% 0px',
-      threshold: 0
+      rootMargin: '-10% 0px -70% 0px',
+      threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5]
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -38,8 +38,27 @@ export default function Home() {
     const sections = document.querySelectorAll('section[id]');
     sections.forEach(section => observer.observe(section));
 
+    // Also listen for scroll events as a fallback
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 100; // Offset for navbar
+      const sections = document.querySelectorAll('section[id]');
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          setActiveSection(sectionId);
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
     return () => {
       sections.forEach(section => observer.unobserve(section));
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -128,13 +147,7 @@ export default function Home() {
               <div className="slide-in-right">
                 <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-1 sm:p-1.5 shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 pulse-glow">
                   <div className="bg-white dark:bg-slate-800 rounded-xl p-4 sm:p-6 md:p-8 h-full">
-                    <Suspense fallback={
-                      <div className="flex items-center justify-center h-48 sm:h-56 md:h-64">
-                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
-                      </div>
-                    }>
-                      <Experience />
-                    </Suspense>
+                    <Experience />
                   </div>
                 </div>
               </div>
