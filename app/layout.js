@@ -1,15 +1,15 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import Squares from './../components/common/Squares';
-import { ToastContainer, toast } from 'react-toastify';
-
-
+import { ThemeProvider } from "@/components/common/ThemeProvider";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -23,39 +23,31 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900 bg-opacity-50 min-h-full`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-slate-900 transition-colors duration-300 min-h-screen
+        overflow-y-scroll scroll-smooth
+
+        `}
       >
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
-          toastStyle={{
-            backgroundColor: "#222",
-            color: "#fff",
-            fontFamily: "var(--font-geist-sans)",
-          }}
-        />
-        <Squares
-
-          speed={0.1}
-          squareSize={20}
-          direction='diagonal' // up, down, left, right, diagonal
-          borderColor='#000'
-          hoverFillColor='#222'
-        >
-
-
+        <ThemeProvider>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+            toastStyle={{
+              fontFamily: "var(--font-geist-sans)",
+            }}
+          />
           {children}
-        </Squares>
+        </ThemeProvider>
       </body>
     </html>
   );

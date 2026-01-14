@@ -1,10 +1,7 @@
 "use client";
 import { sendMgsApi } from "@/utils/api";
 import SubmitButton from "./SubmitButton";
-import { revalidatePath } from "next/cache";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
-
 import { toast } from "react-toastify";
 
 export default function ContactForm() {
@@ -14,7 +11,6 @@ export default function ContactForm() {
     message: "",
   });
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   async function onSubmit() {
     setLoading(true);
@@ -30,8 +26,6 @@ export default function ContactForm() {
       if (data.success) {
         toast.success("Message sent successfully!");
         setFormData({ name: "", email: "", message: "" });
-        // revalidatePath("/contact");
-        // router.push("/");
       } else {
         toast.error("Failed to send message. Please try again later.");
       }
@@ -46,31 +40,44 @@ export default function ContactForm() {
   }
 
   return (
-    <form className="contact-form">
-      <label className="block mb-4 ">
-        Name:
-        <input
-          name="name"
-          type="text"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          required
-          className="border border-gray-300 rounded p-2 bg-gray-300 text-black ml-4"
-        />
-      </label>
-      <label className="block mb-4 ">
-        Email:
-        <input
-          name="email"
-          type="email"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          required
-          className="border border-gray-300 rounded p-2 bg-gray-300 text-black ml-4"
-        />
-      </label>
-      <label>
-        Message:
+    <form className="space-y-4 sm:space-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+        <div className="space-y-1.5 sm:space-y-2">
+          <label className="block text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-300">
+            Name
+          </label>
+          <input
+            name="name"
+            type="text"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            required
+            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white dark:bg-slate-700 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500 text-sm sm:text-base"
+            placeholder="Your name"
+          />
+        </div>
+        <div className="space-y-1.5 sm:space-y-2">
+          <label className="block text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-300">
+            Email
+          </label>
+          <input
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
+            required
+            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white dark:bg-slate-700 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500 text-sm sm:text-base"
+            placeholder="your@email.com"
+          />
+        </div>
+      </div>
+
+      <div className="space-y-1.5 sm:space-y-2">
+        <label className="block text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-300">
+          Message
+        </label>
         <textarea
           name="message"
           value={formData.message}
@@ -78,10 +85,13 @@ export default function ContactForm() {
             setFormData({ ...formData, message: e.target.value })
           }
           required
-          className="border border-gray-300 rounded p-2 h-32 w-full bg-gray-300 text-black"
+          rows={4}
+          className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white dark:bg-slate-700 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500 resize-none text-sm sm:text-base"
+          placeholder="Tell me about your project..."
         />
-      </label>
-      <div className="flex justify-end mt-4">
+      </div>
+
+      <div className="flex justify-end">
         <SubmitButton handleSubmit={onSubmit} loading={loading} />
       </div>
     </form>
