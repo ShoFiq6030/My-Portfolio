@@ -28,9 +28,7 @@ export default function AboutPage() {
             tech trends.
           </p>
         </div>
-        <div className="m:w-1/2 m-auto">
-          <Experience />
-        </div>
+        <div className="m:w-1/2 m-auto">{/* <Experience /> */}</div>
       </div>
       <Footer />
     </div>

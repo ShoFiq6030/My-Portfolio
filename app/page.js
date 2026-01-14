@@ -133,13 +133,13 @@ export default function Home() {
               <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-lg rounded-2xl p-6 sm:p-7 md:p-8 lg:p-10 border border-gray-200 dark:border-gray-700 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 slide-in-left">
                 <div className="space-y-4 sm:space-y-5 text-base sm:text-lg">
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Hello! I'm <span className="font-bold text-blue-600 dark:text-blue-400">Shofiq</span>, a passionate web developer with a keen interest in creating dynamic and responsive web applications.
+                    Hello! I am <span className="font-bold text-blue-600 dark:text-blue-400">Shofiq</span>, a passionate web developer with a keen interest in creating dynamic and responsive web applications.
                   </p>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                     In addition to web development, I am also a <span className="font-bold text-purple-600 dark:text-purple-400">System Admin and MikroTik Expert</span>, with a strong background in Linux systems.
                   </p>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    When I'm not coding, you can find me gaming or exploring the latest tech trends.
+                    When I am not coding, you can find me gaming or exploring the latest tech trends.
                   </p>
                 </div>
               </div>
@@ -217,7 +217,7 @@ export default function Home() {
               </h1>
               <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-blue-500 to-emerald-500 mx-auto rounded-full"></div>
               <p className="text-gray-600 dark:text-gray-400 mt-3 sm:mt-4 md:mt-5 text-base sm:text-lg md:text-xl">
-                Have a project in mind? Let's work together!
+                {`Have a project in mind? Let's work together!`}
               </p>
             </div>
 

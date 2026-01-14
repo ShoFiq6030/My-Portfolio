@@ -44,33 +44,33 @@ const signupAPI = async (data) => {
     }
 }
 
-const getExperienceAPI = async () => {
-    try {
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || '';
-        const response = await fetch(`${baseUrl}/experience`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            cache: 'force-cache',
-            next: { revalidate: 3600 } // Revalidate every hour
-        });
+// const getExperienceAPI = async () => {
+//     try {
+//         const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || '';
+//         const response = await fetch(`${baseUrl}/experience`, {
+//             method: "GET",
+//             headers: {
+//                 "Content-Type": "application/json",
+//             },
+//             cache: 'force-cache',
+//             next: { revalidate: 3600 } // Revalidate every hour
+//         });
 
-        if (!response.ok) {
-            throw new Error("Failed to fetch experiences");
-        }
+//         if (!response.ok) {
+//             throw new Error("Failed to fetch experiences");
+//         }
 
-        const result = await response.json();
-        return result;
-    }
-    catch (error) {
-        console.error("Error fetching experiences:", error);
-        throw error;
-    }
-}
+//         const result = await response.json();
+//         return result;
+//     }
+//     catch (error) {
+//         console.error("Error fetching experiences:", error);
+//         throw error;
+//     }
+// }
 
 export {
     sendMgsApi,
     signupAPI,
-    getExperienceAPI
+    // getExperienceAPI
 }
