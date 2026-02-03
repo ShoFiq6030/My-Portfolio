@@ -85,7 +85,7 @@ export default function Hero() {
                 className="px-6 sm:px-8 py-3 sm:py-4 bg-white/80 dark:bg-slate-800/80 backdrop-blur-lg border-2 border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 rounded-full font-semibold hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 text-sm sm:text-base"
               >
                 <FiDownload className=" animate-bounce" />
-                <span>Download CV</span>
+                <span>Download Resume</span>
               </a>
             </div>
           </div>
