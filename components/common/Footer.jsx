@@ -137,9 +137,7 @@ export default function Footer() {
               <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 Shofiq
               </h2>
-              <p className={`text-xs ${styles.textSecondary}`}>
-                Web Developer & Designer
-              </p>
+              <p className={`text-xs ${styles.textSecondary}`}>Web Developer</p>
             </div>
           </div>
 
@@ -171,7 +169,7 @@ export default function Footer() {
               technologies.
             </p>
             <div className="flex gap-2 pt-2">
-              {["Web", "UI/UX", "React"].map((tag) => (
+              {["Web", "UI/UX", "React", "Next", "Node", "Mongo"].map((tag) => (
                 <span
                   key={tag}
                   className={`text-xs px-2 py-1 rounded-md ${styles.card} ${styles.border}`}

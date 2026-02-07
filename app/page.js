@@ -114,7 +114,7 @@ export default function Home() {
         </section>
 
         {/* Spacer */}
-        <div className="h-8 sm:h-12 md:h-16 lg:h-20 xl:h-24"></div>
+        {/* <div className="h-8 sm:h-12 md:h-16 lg:h-20 xl:h-24"></div> */}
 
         {/* About Section */}
         <section
@@ -156,7 +156,7 @@ export default function Home() {
         </section>
 
         {/* Spacer */}
-        <div className="h-8 sm:h-12 md:h-16 lg:h-20 xl:h-24"></div>
+        {/* <div className="h-8 sm:h-12 md:h-16 lg:h-20 xl:h-24"></div> */}
 
         {/* Skills Section */}
         <section
@@ -181,7 +181,7 @@ export default function Home() {
         </section>
 
         {/* Spacer */}
-        <div className="h-8 sm:h-12 md:h-16 lg:h-20 xl:h-24"></div>
+        {/* <div className="h-8 sm:h-12 md:h-16 lg:h-20 xl:h-24"></div> */}
 
         {/* Projects Section */}
         <section
@@ -203,7 +203,7 @@ export default function Home() {
         </section>
 
         {/* Spacer */}
-        <div className="h-8 sm:h-12 md:h-16 lg:h-20 xl:h-24"></div>
+        {/* <div className="h-8 sm:h-12 md:h-16 lg:h-20 xl:h-24"></div> */}
 
         {/* Contact Section */}
         <section
@@ -230,10 +230,10 @@ export default function Home() {
         </section>
 
         {/* Spacer */}
-        <div className="h-8 sm:h-12 md:h-16 lg:h-20 xl:h-24"></div>
+        {/* <div className="h-8 sm:h-12 md:h-16 lg:h-20 xl:h-24"></div> */}
 
         {/* More Section */}
-        <section
+        {/* <section
           id="more"
           className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-20 lg:py-24 flex items-center justify-center"
         >
@@ -252,7 +252,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
 
       <Footer />
