@@ -51,7 +51,8 @@ export default function Hero() {
                 <RotatingText
                   texts={[
                     "Web developer",
-                    "React developer",
+                    "React.js developer",
+                    "Next.js developer",
                     "System Admin",
                     "MikroTik Expert",
                     "Linux Enthusiast",
@@ -121,7 +122,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute hidden md:block bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <div className="w-6 sm:w-8 h-10 sm:h-12 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center p-1">
           <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-600 dark:bg-gray-400 rounded-full animate-[bounce_1.5s_infinite]"></div>
         </div>
