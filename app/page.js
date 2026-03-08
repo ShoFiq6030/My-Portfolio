@@ -136,7 +136,7 @@ export default function Home() {
                     Hello! I am <span className="font-bold text-blue-600 dark:text-blue-400">Shofiq</span>, a passionate web developer with a keen interest in creating dynamic and responsive web applications.
                   </p>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    In addition to web development, I am also a <span className="font-bold text-purple-600 dark:text-purple-400">System Admin and MikroTik Expert</span>, with a strong background in Linux systems.
+                    In addition to web development, I am also a <span className="font-bold text-purple-600 dark:text-purple-400">System Admin</span> <span>and </span><span className="font-bold text-purple-600 dark:text-purple-400">Networking Expert</span>, with a strong knowledge in <span className="font-bold text-purple-600 dark:text-purple-400">Linux systems</span>.
                   </p>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                     When I am not coding, you can find me gaming or exploring the latest tech trends.
